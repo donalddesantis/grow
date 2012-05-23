@@ -10,15 +10,15 @@ getColumnWidth(width, gutter, n)
   val = (width * n) + (gutter * (n - 1)) 
   return val
 
-
-gridBuilder(columnWidth, gutterWidth, totalColumns)
+gridBuilder(columnWidth, gutterWidth, totalColumns, contentWidth)
   for n in totalColumns
     .s{n} 
       float left
-      width = getColumnWidth(columnWidth, gutterWidth, n)
+      width getColumnWidth(columnWidth, gutterWidth, n)
       margin-right gutterWidth
       &:last-child, .last
         margin-right 0px
+
   #gridHelper
     position fixed
     opacity .5
@@ -40,10 +40,10 @@ gridBuilder(columnWidth, gutterWidth, totalColumns)
 
 
 // General rules
-.container
+.row
   margin 0px auto
 
-.row 
+.row, .cf
   &:after
     clear both
     visibility hidden
@@ -79,17 +79,17 @@ gridBuilder(columnWidth, gutterWidth, totalColumns)
 
 
 // Large screens 
-@media only screen and (min-width : 1220px) 
+@media only screen and (min-width : 1200px) 
   // Styles 
   gutterWidth   = 30px
   columnWidth   = 70px
   contentWidth  = 1170px
   totalColumns  = 1 2 3 4 5 6 7 8 9 10 11 12
 
-  .container
+  .row
     width contentWidth
 
-  gridBuilder(columnWidth, gutterWidth, totalColumns)
+  gridBuilder(columnWidth, gutterWidth, totalColumns, contentWidth)
 
 
 // iPhone 4 
