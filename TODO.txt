@@ -3,6 +3,7 @@ TODO
 # Started
 
 # Paused
+get back to zero in terms of laptop layout
 
 # Backlog
 Content responds to browser width
@@ -24,3 +25,4 @@ Special controls
 
 
 # Done
+show grid overlay

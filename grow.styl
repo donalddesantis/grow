@@ -14,14 +14,42 @@ getColumnWidth(width, gutter, n)
 gridBuilder(columnWidth, gutterWidth, totalColumns)
   for n in totalColumns
     .s{n} 
+      float left
       width = getColumnWidth(columnWidth, gutterWidth, n)
       margin-right gutterWidth
       &:last-child, .last
         margin-right 0px
+  #gridHelper
+    position fixed
+    opacity .5
+    width 100%
+    text-align center
+    height 1200px
+    top 0px
+    left 0px
+    .colWrapper
+      margin 0px auto
+    .gridHelperColumn
+      background red
+      height 1200px
+      float left
+      width columnWidth
+      margin-right gutterWidth
+      &:last-child 
+        margin-right 0px
+
 
 // General rules
 .container
   margin 0px auto
+
+.row 
+  &:after
+    clear both
+    visibility hidden
+    display table
+    content ""
+
 
 // Column and row widths
 // Rows should grow from "auto", to 768px, to 960px, to 1200px
@@ -53,9 +81,9 @@ gridBuilder(columnWidth, gutterWidth, totalColumns)
 // Large screens 
 @media only screen and (min-width : 1220px) 
   // Styles 
-  gutterWidth   = 30
-  columnWidth   = 70
-  contentWidth  = 1200
+  gutterWidth   = 30px
+  columnWidth   = 70px
+  contentWidth  = 1170px
   totalColumns  = 1 2 3 4 5 6 7 8 9 10 11 12
 
   .container
