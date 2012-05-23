@@ -1,0 +1,108 @@
+// A Responsive CSS Framework. Yay!
+// about this:
+// By Donald DeSantis. A work in progress, components and 
+// functionality added as needed. Feel free to fork and pull request.
+// Borrowed a bit from Bootstrap, since they're smart.  
+
+
+// Functions
+getColumnWidth(width, gutter, n)
+  val = (width * n) + (gutter * (n - 1)) 
+  return val
+
+
+gridBuilder(columnWidth, gutterWidth, totalColumns)
+  for n in totalColumns
+    .s{n} 
+      width = getColumnWidth(columnWidth, gutterWidth, n)
+      margin-right gutterWidth
+      &:last-child, .last
+        margin-right 0px
+
+// General rules
+.container
+  margin 0px auto
+
+// Column and row widths
+// Rows should grow from "auto", to 768px, to 960px, to 1200px
+// Smartphones (portrait and landscape) 
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) 
+  // Styles 
+
+
+// Smartphones (landscape) 
+@media only screen and (min-width : 321px) 
+  // Styles 
+
+
+// Smartphones (portrait) 
+@media only screen and (max-width : 320px) 
+  // Styles 
+
+
+// iPads (portrait and landscape) 
+@media only screen and (min-device-width : 768px) and (max-device-width : 979px) 
+  // Styles 
+
+
+// Desktops and laptops 
+@media only screen and (min-width : 980px) 
+  // Styles 
+
+
+// Large screens 
+@media only screen and (min-width : 1220px) 
+  // Styles 
+  gutterWidth   = 30
+  columnWidth   = 70
+  contentWidth  = 1200
+  totalColumns  = 1 2 3 4 5 6 7 8 9 10 11 12
+
+  .container
+    width contentWidth
+
+  gridBuilder(columnWidth, gutterWidth, totalColumns)
+
+
+// iPhone 4 
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) 
+  // Styles 
+
+
+// Client specific things
+.visible-phone 
+  display: none !important
+
+.visible-tablet
+  display: none !important
+
+.hidden-desktop
+  display: none !important
+
+// Phones and shitty laptops
+@media (max-width: 767px)
+  .visible-phone 
+    display: inherit !important
+  
+  .hidden-phone 
+    display: none !important
+  
+  .hidden-desktop 
+    display: inherit !important
+  
+  .visible-desktop 
+    display: none !important
+
+// Tablets and shitty laptops
+@media (min-width: 768px) and (max-width: 979px) 
+  .visible-tablet 
+    display: inherit !important
+  
+  .hidden-tablet 
+    display: none !important
+  
+  .hidden-desktop 
+    display: inherit !important
+  
+  .visible-desktop 
+    display: none !important 

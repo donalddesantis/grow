@@ -1,0 +1,26 @@
+TODO
+
+# Started
+
+# Paused
+
+# Backlog
+Content responds to browser width
+  columns and rows
+Images 
+  resize to content
+    resize based on their column size
+    background images resize 
+  Multiple resolutions for hdpi vs mdpi screens
+    for images
+    for icons
+Navigation 
+  sensible navigation for each client
+Special controls
+  Sidebar controls
+    Big Screen: pinned to side, expanded
+    Tablet, Normal screen: pinned to size, collapsed
+    Phone: modal window
+
+
+# Done
